@@ -1,9 +1,32 @@
 body {
-    font-size: 16px;
+    font-size: 32px;
     font-family: sans-serif;
 }
 header {
     text-align: center;
     color: #FFFF00;
     text-shadow: 1px 1px 2px #000;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.left-container {
+    width: 500px;
+    height: 500px;
+}
+.right-container {
+    width: 500px;
+    height: 500px;
+}
+#grid-container table {
+    border-collapse: collapse;
+}
+#grid-container table td{
+    border: 1px solid #000;
+    text-align: center;
+    padding: 4px;
+    font-size: 64px;
 }
