@@ -20,13 +20,23 @@ main {
 .right-container {
     width: 500px;
     height: 500px;
+    text-align: center;
 }
 #grid-container table {
     border-collapse: collapse;
 }
 #grid-container table td{
+    width: 100px;
+    height: 100px;
     border: 1px solid #000;
     text-align: center;
-    padding: 4px;
     font-size: 64px;
+}
+#bingoNumber {
+    width: 200px;
+    height: 200px;
+    font-size: 128px;
+    padding: 4px;
+    border: 1px solid #000;
+    margin: auto;
 }
