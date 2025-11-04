@@ -30,7 +30,7 @@ shuffle(pool);
  */
 function renderGrid(grid) {
     // table開始タグ
-    var tableHTML = '<table border="1" cellspacing="0" cellpadding="4">';
+    var tableHTML = '<table>';
     for (var _i = 0, grid_1 = grid; _i < grid_1.length; _i++) {
         var row = grid_1[_i];
         tableHTML += '<tr>';

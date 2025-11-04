@@ -37,7 +37,7 @@ shuffle(pool);
  */
  function renderGrid(grid: (number | undefined)[][]) {
     // table開始タグ
-    let tableHTML = '<table border="1" cellspacing="0" cellpadding="4">';
+    let tableHTML = '<table>';
     for (const row of grid) {
       tableHTML += '<tr>';
       for (const cell of row) {
