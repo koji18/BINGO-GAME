@@ -14,16 +14,17 @@ main {
     gap: 40px;
 }
 .left-container {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 }
 .right-container {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     text-align: center;
 }
 #grid-container table {
     border-collapse: collapse;
+    margin: auto;
 }
 #grid-container table td{
     width: 100px;
@@ -39,4 +40,11 @@ main {
     padding: 4px;
     border: 1px solid #000;
     margin: auto;
+}
+#bingoButton {
+    width: 400px;
+    height: 100px;
+    font-size: 32px;
+    margin-top: 20px;
+    border-radius: 60px;
 }
