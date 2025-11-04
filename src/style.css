@@ -1,6 +1,7 @@
 body {
     font-size: 32px;
     font-family: sans-serif;
+    position: relative;
 }
 header {
     text-align: center;
@@ -47,4 +48,10 @@ main {
     font-size: 32px;
     margin-top: 20px;
     border-radius: 60px;
+}
+#bingo {
+    position: absolute;
+    font-size: 500px;
+    pointer-events: none;
+    transform: rotate(20deg);
 }
