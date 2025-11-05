@@ -20,18 +20,31 @@ function shuffle(arr: number[]): number[] {
 /*
  *ビンゴ表初期化
  */
+let pool: number[] = [];
+let grid: (number | undefined)[][] = []
+reset();
 
-const pool = Array.from({ length: 75 }, (_, i) => i + 1);
-shuffle(pool);
-// console.log(pool);
+function reset() {
+    pool = Array.from({ length: 75 }, (_, i) => i + 1);
+    shuffle(pool);
+    
+    grid = Array.from({ length: 5 }, (_, r) =>
+        Array.from({ length: 5 }, (_, c) => pool[r * 5 + c])
+    )
+    
+    grid[2]![2] = 0;
+    shuffle(pool);
+    
+    //grid配列を表示
+    renderGrid(grid);
 
-const grid = Array.from({ length: 5 }, (_, r) =>
-    Array.from({ length: 5 }, (_, c) => pool[r * 5 + c])
-)
+    //bingoを非表示にする
+    const bingoElement = document.getElementById('bingo');
+    if (bingoElement) {
+        bingoElement.textContent = '';
+    }
+}
 
-grid[2]![2] = 0;
-shuffle(pool);
-// console.table(grid);
 /*
  *ビンゴ表表示
  */
@@ -53,12 +66,10 @@ shuffle(pool);
     }
   }
   
-  // grid配列を表示
-  renderGrid(grid);
-
 /*
  *ビンゴ判定
  */
+
  function bingo() {
 
     let first = pool.shift();
@@ -103,6 +114,5 @@ shuffle(pool);
             }
         }
     }
-    console.table(grid);
     renderGrid(grid);
  }

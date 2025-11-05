@@ -16,15 +16,25 @@ function shuffle(arr) {
 /*
  *ビンゴ表初期化
  */
-var pool = Array.from({ length: 75 }, function (_, i) { return i + 1; });
-shuffle(pool);
-// console.log(pool);
-var grid = Array.from({ length: 5 }, function (_, r) {
-    return Array.from({ length: 5 }, function (_, c) { return pool[r * 5 + c]; });
-});
-grid[2][2] = 0;
-shuffle(pool);
-// console.table(grid);
+var pool = [];
+var grid = [];
+reset();
+function reset() {
+    pool = Array.from({ length: 75 }, function (_, i) { return i + 1; });
+    shuffle(pool);
+    grid = Array.from({ length: 5 }, function (_, r) {
+        return Array.from({ length: 5 }, function (_, c) { return pool[r * 5 + c]; });
+    });
+    grid[2][2] = 0;
+    shuffle(pool);
+    //grid配列を表示
+    renderGrid(grid);
+    //bingoを非表示にする
+    var bingoElement = document.getElementById('bingo');
+    if (bingoElement) {
+        bingoElement.textContent = '';
+    }
+}
 /*
  *ビンゴ表表示
  */
@@ -46,8 +56,6 @@ function renderGrid(grid) {
         container.innerHTML = tableHTML;
     }
 }
-// grid配列を表示
-renderGrid(grid);
 /*
  *ビンゴ判定
  */
@@ -92,6 +100,5 @@ function bingo() {
             }
         }
     }
-    console.table(grid);
     renderGrid(grid);
 }
